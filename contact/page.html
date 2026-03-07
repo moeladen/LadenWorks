@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | LadenWorks</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">LadenWorks</div>
+
+  <div class="menu">
+    <a href="../services/page.html">Services</a>
+    <a href="../industries/page.html">Industries</a>
+    <a href="../about/page.html">About</a>
+    <a href="../careers/page.html">Careers</a>
+    <a href="./page.html">Contact</a>
+  </div>
+
+  <a href="../page.html" class="cta">Request Service</a>
+</nav>
+
+
+<!-- PAGE TITLE -->
+<section>
+
+<h1 class="section-title">Contact Us</h1>
+
+<div class="card" style="max-width:800px; margin:auto; opacity:1; transform:none;">
+
+<form onsubmit="sendWhatsApp(event)">
+
+<input id="name" type="text" placeholder="Full Name"
+style="width:100%; padding:0.75rem; margin-bottom:1rem; border-radius:12px; border:1px solid #555; background-color:#0B1C2D; color:#fff;">
+
+<input id="email" type="email" placeholder="Email"
+style="width:100%; padding:0.75rem; margin-bottom:1rem; border-radius:12px; border:1px solid #555; background-color:#0B1C2D; color:#fff;">
+
+<textarea id="message" placeholder="Message" rows="5"
+style="width:100%; padding:0.75rem; margin-bottom:1rem; border-radius:12px; border:1px solid #555; background-color:#0B1C2D; color:#fff;"></textarea>
+
+<button type="submit" class="btn" style="width:100%;">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>LadenWorks</h3>
+<p>Nationwide facility services powered by technology and in-house technicians.</p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>Calgary, AB</p>
+<p>info@ladenworks.com</p>
+</div>
+
+</div>
+
+<p style="text-align:center; margin-top:2rem;">
+© 2026 LadenWorks. All rights reserved.
+</p>
+
+</footer>
+
+
+<!-- WHATSAPP SCRIPT -->
+<script>
+
+function sendWhatsApp(e){
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let message = document.getElementById("message").value;
+
+let phone = "961XXXXXXXX"; // replace with your number
+
+let text = `New Contact Request - LadenWorks
+
+Name: ${name}
+Email: ${email}
+Message: ${message}`;
+
+let url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+window.open(url, "_blank");
+
+}
+
+</script>
+
+
+</body>
+</html>
