@@ -5,7 +5,7 @@
   --primary: #0d1b2a;
   --section: linear-gradient(135deg, #0d1b2a, #1b3b5a);
   --card: #1f3a5f;
-  --accent: #ff9800; /* brighter orange */
+  --accent: #ff9800;
   --text: #ffffff;
   --gray: #cccccc;
 }
@@ -17,6 +17,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+a{
+  text-decoration:none;
+}
+
 body {
   background-color: var(--primary);
   color: var(--text);
@@ -24,6 +28,7 @@ body {
 }
 
 /* NAVIGATION */
+
 nav {
   background-color: rgba(15, 27, 42, 0.95);
   display: flex;
@@ -32,6 +37,7 @@ nav {
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 100;
   backdrop-filter: blur(8px);
 }
@@ -41,6 +47,12 @@ nav .logo {
   font-weight: 900;
   color: var(--accent);
   letter-spacing: 1px;
+}
+
+/* IMPORTANT FIX */
+nav .menu{
+  display:flex;
+  align-items:center;
 }
 
 nav .menu a {
@@ -56,6 +68,7 @@ nav .menu a:hover {
 
 nav .cta {
   background-color: var(--accent);
+  color: var(--primary);
   padding: 0.5rem 1rem;
   border-radius: 12px;
   font-weight: 700;
@@ -68,6 +81,7 @@ nav .cta:hover {
 }
 
 /* HERO */
+
 section.hero {
   display: flex;
   flex-wrap: wrap;
@@ -138,6 +152,7 @@ section.hero {
 }
 
 /* SECTIONS */
+
 section {
   padding: 6rem 2rem;
   max-width: 1200px;
@@ -164,6 +179,7 @@ section:nth-child(even) {
 }
 
 /* CARDS */
+
 .grid {
   display: grid;
   gap: 2rem;
@@ -179,8 +195,6 @@ section:nth-child(even) {
   border-radius: 25px;
   transition: 0.5s;
   border: 1px solid transparent;
-  opacity: 1;
-  transform: translateY(50px);
 }
 
 .card:hover {
@@ -200,6 +214,7 @@ section:nth-child(even) {
 }
 
 /* FOOTER */
+
 footer {
   background-color: var(--section);
   padding: 4rem 2rem;
@@ -223,6 +238,7 @@ footer p, footer li {
 }
 
 /* BUTTONS */
+
 .btn {
   background-color: var(--accent);
   color: var(--primary);
@@ -238,6 +254,7 @@ footer p, footer li {
 }
 
 /* SCROLL ANIMATION */
+
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -252,13 +269,26 @@ footer p, footer li {
 }
 
 /* RESPONSIVE */
+
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
+
+  nav{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:1rem;
   }
-  nav .menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
+
+  nav .menu{
+    flex-wrap:wrap;
+    gap:1rem;
+  }
+
+  nav .menu a{
+    margin-left:0;
+  }
+
+  .hero{
+    flex-direction:column;
+  }
+
 }
