@@ -27,12 +27,13 @@
     <h1>Facility Services. <span>Reinvented.</span></h1>
     <p>24/7 in-house technicians. Nationwide coverage. Tech-enabled dispatch and real-time tracking.</p>
   </div>
-  <div class="form">
+  <div class="card" style="max-width:800px; margin:auto; opacity:1; transform:none;">
+    <form onsubmit="sendWhatsApp(event)">
     <h3>Quick Service Request</h3>
     <input type="text" placeholder="Company Name">
     <input type="email" placeholder="Email Address">
     <textarea placeholder="Describe your issue"></textarea>
-    <button>Submit Request</button>
+    <button type="submit" class="btn" style="width:100%";>Submit Request</button>
   </div>
 </section>
 
@@ -56,6 +57,32 @@
   </div>
   <p style="text-align:center; margin-top:2rem;">© 2026 LadenWorks. All rights reserved.</p>
 </footer>
+<!-- WHATSAPP SCRIPT -->
+<script>
+
+function sendWhatsApp(e){
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let message = document.getElementById("message").value;
+
+let phone = "18257477259"; // replace with your number
+
+let text = `New Contact Request - LadenWorks
+
+Name: ${name}
+Email: ${email}
+Message: ${message}`;
+
+let url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+window.open(url, "_blank");
+
+}
+
+</script>
 
 <script src="ladenworks.js"></script>
 </body>
