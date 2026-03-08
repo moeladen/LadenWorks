@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LadenWorks | Facility Services Reinvented</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- NAV -->
 <nav>
   <div class="logo">LadenWorks</div>
+
   <div class="menu">
     <a href="./services/page.html">Services</a>
     <a href="./industries/page.html">Industries</a>
@@ -18,23 +21,58 @@
     <a href="./careers/page.html">Careers</a>
     <a href="./contact/page.html">Contact</a>
   </div>
+
   <a href="./contact/page.html" class="cta">Request Service</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
+
   <div class="text">
     <h1>Facility Services. <span>Reinvented.</span></h1>
-    <p>24/7 in-house technicians. Nationwide coverage. Tech-enabled dispatch and real-time tracking.</p>
+    <p>
+      24/7 in-house technicians. Nationwide coverage. Tech-enabled dispatch and real-time tracking.
+    </p>
   </div>
+
   <div class="card" style="max-width:800px; margin:auto; opacity:1; transform:none;">
+
     <form onsubmit="sendWhatsApp(event)">
-    <h3>Quick Service Request</h3>
-    <input type="text" placeholder="Company Name">
-    <input type="email" placeholder="Email Address">
-    <textarea placeholder="Describe your issue"></textarea>
-    <button type="submit" class="btn" style="width:100%";>Submit Request</button>
+
+      <h3>Quick Service Request</h3>
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Company Name"
+        required
+      >
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Email Address"
+        required
+      >
+
+      <textarea
+        id="message"
+        placeholder="Describe your issue"
+        required
+      ></textarea>
+
+      <button
+        type="submit"
+        class="btn"
+        style="width:100%;"
+      >
+        Submit Request
+      </button>
+
+    </form>
+
   </div>
+
 </section>
 
 <!-- DYNAMIC SECTIONS -->
@@ -42,48 +80,68 @@
 
 <!-- FOOTER -->
 <footer>
+
   <div class="footer-grid">
+
     <div>
       <h3>LadenWorks</h3>
-      <p>Nationwide facility services powered by technology and in-house technicians.</p>
+      <p>
+        Nationwide facility services powered by technology and in-house technicians.
+      </p>
     </div>
-   
+
     <div>
       <h3>Contact</h3>
-<p>Calgary, AB</p>
-      <p><a href="mailto:info@ladenworks.com">info@ladenworks.com</a></p>
-    <p><a href="tel:+18257477259">+1 825 747 7259</a></p>
+      <p>Calgary, AB</p>
+      <p>
+        <a href="mailto:info@ladenworks.com">
+          info@ladenworks.com
+        </a>
+      </p>
+      <p>
+        <a href="tel:+18257477259">
+          +1 825 747 7259
+        </a>
+      </p>
     </div>
+
   </div>
-  <p style="text-align:center; margin-top:2rem;">© 2026 LadenWorks. All rights reserved.</p>
+
+  <p style="text-align:center; margin-top:2rem;">
+    © 2026 LadenWorks. All rights reserved.
+  </p>
+
 </footer>
+
 <!-- WHATSAPP SCRIPT -->
 <script>
 
-function sendWhatsApp(e){
+function sendWhatsApp(e) {
 
-e.preventDefault();
+  e.preventDefault();
 
-let name = document.getElementById("name").value;
-let email = document.getElementById("email").value;
-let message = document.getElementById("message").value;
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
 
-let phone = "18257477259"; // replace with your number
+  let phone = "18257477259";
 
-let text = `New Contact Request - LadenWorks
+  let text =
+`New Contact Request - LadenWorks
 
-Name: ${name}
+Company: ${name}
 Email: ${email}
-Message: ${message}`;
+Issue: ${message}`;
 
-let url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+  let url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
-window.open(url, "_blank");
+  window.open(url, "_blank");
 
 }
 
 </script>
 
 <script src="ladenworks.js"></script>
+
 </body>
 </html>
