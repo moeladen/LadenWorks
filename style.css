@@ -292,3 +292,9 @@ nav a:visited {
 nav a:hover {
   color: var(--accent);
 }
+.logo-img {
+  width: 50px;           /* adjust size as needed */
+  height: 50px;
+  border-radius: 50%;    /* makes it circular */
+  object-fit: cover;     /* ensures the image scales nicely */
+}
