@@ -298,3 +298,58 @@ nav a:hover {
   border-radius: 50%;    /* makes it circular */
   object-fit: cover;     /* ensures the image scales nicely */
 }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.logo-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Desktop menu */
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hamburger hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #0B1C2D;
+    padding: 20px;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .cta {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
